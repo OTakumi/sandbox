@@ -1,0 +1,18 @@
+services:
+  database:
+    image: postgres
+    container_name: db-container
+    hostname: db-server
+    restart: always
+    # set shared memory limit
+    shm_size: 256mb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sandbox_db
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "54321:5432"
+volumes:
+  db-data:

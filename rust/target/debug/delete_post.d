@@ -1,0 +1,1 @@
+/home/takumiooo/workspace/rust_sandbox/target/debug/delete_post: /home/takumiooo/workspace/rust_sandbox/dao/src/bin/delete_post.rs /home/takumiooo/workspace/rust_sandbox/dao/src/lib.rs /home/takumiooo/workspace/rust_sandbox/dao/src/models.rs /home/takumiooo/workspace/rust_sandbox/dao/src/schema.rs

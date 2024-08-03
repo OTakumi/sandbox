@@ -1,0 +1,1 @@
+/home/takumiooo/workspace/rust_sandbox/target/debug/write_post: /home/takumiooo/workspace/rust_sandbox/dao/src/bin/write_post.rs /home/takumiooo/workspace/rust_sandbox/dao/src/lib.rs /home/takumiooo/workspace/rust_sandbox/dao/src/models.rs /home/takumiooo/workspace/rust_sandbox/dao/src/schema.rs
