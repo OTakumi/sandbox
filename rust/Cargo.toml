@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "dao", "discord_api_call",
+]
+resolver = "2"
