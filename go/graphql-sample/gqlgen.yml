@@ -1,0 +1,16 @@
+# 自動生成コードのもととなるGraphQLスキーマの配置
+schema:
+  - ./*.graphqls
+# 自動生成されるgenerated.goの配置
+exec:
+  filename: internal/generated.go
+  package: internal
+# スキーマオブジェクトに対応する構造体の配置
+model:
+  filename: graph/model/models_gen.go
+  package: model
+# リゾルバの配置
+resolver:
+  layout: follow-schema
+  dir: graph
+  package: graph
