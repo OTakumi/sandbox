@@ -1,0 +1,23 @@
+# Use postgres/example user/password credentials
+services:
+  db:
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 256mb
+    volumes:
+      # - graphql-postgres-data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d
+      - graphql-postgres-data:/var/lib/postgresql/data
+      - type: tmpfs
+        target: /dev/shm
+        tmpfs:
+          size: 134217728 # 128*2^20 bytes = 128Mb
+    ports:
+      - "54322:5432"
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: graphql-sample
+volumes:
+  graphql-postgres-data:
