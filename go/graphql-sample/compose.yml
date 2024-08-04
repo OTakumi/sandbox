@@ -16,6 +16,7 @@ services:
     ports:
       - "54322:5432"
     environment:
+      POSTGRES_HOST: db
       POSTGRES_USER: example
       POSTGRES_PASSWORD: example
       POSTGRES_DB: graphql-sample

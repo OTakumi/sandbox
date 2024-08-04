@@ -1,0 +1,11 @@
+pkgname = "db"
+output = "graph/db"
+wipe = true
+
+[psql]
+dbname = "graphql_sample"
+host = "localhost"
+port = 54322
+user = "example"
+pass = "example"
+sslmode = "disable"
