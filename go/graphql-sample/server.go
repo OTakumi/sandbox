@@ -15,10 +15,10 @@ const defaultPort = "8080"
 
 func main() {
 
-    port := os.Getenv("PORT")
-    if port == "" {
-        port = defaultPort
-    }
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = defaultPort
+	}
 
 	srv := handler.NewDefaultServer(internal.NewExecutableSchema(internal.Config{Resolvers: &graph.Resolver{}}))
 
