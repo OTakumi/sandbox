@@ -7,7 +7,7 @@ services:
     shm_size: 256mb
     volumes:
       # - graphql-postgres-data:/var/lib/postgresql/data
-      - ./postgres/init:/docker-entrypoint-initdb.d
+      # - ./postgres/init:/docker-entrypoint-initdb.d
       - graphql-postgres-data:/var/lib/postgresql/data
       - type: tmpfs
         target: /dev/shm
@@ -17,8 +17,8 @@ services:
       - "54322:5432"
     environment:
       POSTGRES_HOST: db
-      POSTGRES_USER: example
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: graphql-sample
+      POSTGRES_USER: gql_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: graphql_sample
 volumes:
   graphql-postgres-data:
