@@ -1,6 +1,6 @@
-/home/takumiooo/workspace/rust_sandbox/target/debug/deps/libwrite_post-2a3627687c85eef7.rmeta: dao/src/bin/write_post.rs Cargo.toml
+/home/takumiooo/workspace/sandbox/rust/target/debug/deps/libwrite_post-2a3627687c85eef7.rmeta: dao/src/bin/write_post.rs Cargo.toml
 
-/home/takumiooo/workspace/rust_sandbox/target/debug/deps/write_post-2a3627687c85eef7.d: dao/src/bin/write_post.rs Cargo.toml
+/home/takumiooo/workspace/sandbox/rust/target/debug/deps/write_post-2a3627687c85eef7.d: dao/src/bin/write_post.rs Cargo.toml
 
 dao/src/bin/write_post.rs:
 Cargo.toml:

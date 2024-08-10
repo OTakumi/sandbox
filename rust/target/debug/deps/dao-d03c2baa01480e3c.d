@@ -1,6 +1,6 @@
-/home/takumiooo/workspace/rust_sandbox/target/debug/deps/libdao-d03c2baa01480e3c.rmeta: dao/src/lib.rs dao/src/models.rs dao/src/schema.rs Cargo.toml
+/home/takumiooo/workspace/sandbox/rust/target/debug/deps/libdao-d03c2baa01480e3c.rmeta: dao/src/lib.rs dao/src/models.rs dao/src/schema.rs Cargo.toml
 
-/home/takumiooo/workspace/rust_sandbox/target/debug/deps/dao-d03c2baa01480e3c.d: dao/src/lib.rs dao/src/models.rs dao/src/schema.rs Cargo.toml
+/home/takumiooo/workspace/sandbox/rust/target/debug/deps/dao-d03c2baa01480e3c.d: dao/src/lib.rs dao/src/models.rs dao/src/schema.rs Cargo.toml
 
 dao/src/lib.rs:
 dao/src/models.rs:
