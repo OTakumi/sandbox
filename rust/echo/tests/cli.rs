@@ -1,5 +1,5 @@
 use assert_cmd::Command;
-use predicates::prelude::*;
+use std::fs;
 
 #[test]
 fn runs() {
@@ -12,4 +12,13 @@ fn runs() {
 fn dies_no_args() {
     let mut cmd = Command::cargo_bin("echo").unwrap();
     cmd.assert().stderr(predicates::str::contains("USAGE"));
+}
+
+#[test]
+fn hello_1() {
+    let outfile = "tests/expected/hello_1.txt";
+    let expected = fs::read_to_string(outfile).unwrap();
+
+    let mut cmd = Command::cargo_bin("echo").unwrap();
+    cmd.arg("Hello there").assert().success().stdout(expected);
 }
