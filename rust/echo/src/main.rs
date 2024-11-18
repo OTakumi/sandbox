@@ -16,8 +16,6 @@ struct Cli {
 fn main() {
     let cli = Cli::parse();
 
-    println!("{:?}", std::env::args());
-
     // Check if omit_newline is true
     // If true, set ending to empty string
     let ending = if cli.omit_newline { "" } else { "\n" };
