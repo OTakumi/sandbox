@@ -1,6 +1,6 @@
 [workspace]
 
 members = [
-    "dao", "discord_api_call", "quickreplace",
+    "dao", "discord_api_call", "echo", "mandelbrot", "quickreplace",
 ]
 resolver = "2"
