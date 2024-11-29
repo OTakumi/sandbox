@@ -1,24 +1,48 @@
 use assert_cmd::Command;
 use std::fs;
 
+type TestResult = Result<(), Box<dyn std::error::Error>>;
+
 #[test]
-fn runs() {
-    let mut cmd = Command::cargo_bin("echo").unwrap();
-    cmd.arg("hello").assert().success();
+/// This test checks that help is displayed when executed without any command arguments
+fn no_args() -> TestResult {
+    Command::cargo_bin("echo")?.assert().failure();
+
+    Ok(())
+}
+
+/// This helper function is used to execute multiple test patterns
+/// using the same test execution method
+fn run(args: &[&str], expexted_file: &str) -> TestResult {
+    let expected = fs::read_to_string(expexted_file)?;
+    Command::cargo_bin("echo")?
+        .args(args)
+        .assert()
+        .success()
+        .stdout(expected);
+    Ok(())
 }
 
 #[test]
-#[should_panic]
-fn dies_no_args() {
-    let mut cmd = Command::cargo_bin("echo").unwrap();
-    cmd.assert().stderr(predicates::str::contains("USAGE"));
-}
-
-#[test]
-fn hello_1() {
+fn hello_1() -> TestResult {
     let outfile = "tests/expected/hello_1.txt";
-    let expected = fs::read_to_string(outfile).unwrap();
+    run(&["Hello there"], outfile)
+}
 
-    let mut cmd = Command::cargo_bin("echo").unwrap();
-    cmd.arg("Hello there").assert().success().stdout(expected);
+#[test]
+fn hello_2() -> TestResult {
+    let outfile = "tests/expected/hello_2.txt";
+    run(&["Hello", "there"], outfile)
+}
+
+#[test]
+fn hello1_no_newline() -> TestResult {
+    let outfile = "tests/expected/hello_1_n.txt";
+    run(&["Hello  there", "-n"], outfile)
+}
+
+#[test]
+fn hello2_no_newline() -> TestResult {
+    let outfile = "tests/expected/hello_2_n.txt";
+    run(&["-n", "Hello", "there"], outfile)
 }
